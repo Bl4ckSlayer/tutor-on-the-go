@@ -1,10 +1,30 @@
 import React from "react";
+import AllFunctions from "../../Hooks/AllFunctions";
+import { getCourse } from "../Fake Data/FakeStorage";
 
 const Checkout = (props) => {
-  console.log(props.service);
+  const data = getCourse();
+  const [
+    cart,
+    setCart,
+    addToCart,
+    addToPackage,
+    DeleteItem,
+    emptyCart,
+    emptyPackage,
+  ] = AllFunctions();
+  const { name, img, description, price } = data[0];
+  const submitted = () => {
+    emptyCart();
+  };
+
   return (
     <div>
-      <form>
+      <div>{name}</div>
+      <div>{price}</div>
+      <div>{description}</div>
+      <img src={img} alt="" />
+      <form onSubmit={submitted}>
         <div className="form-row">
           <div className="form-group col-md-6">
             <label for="inputEmail4">Email</label>

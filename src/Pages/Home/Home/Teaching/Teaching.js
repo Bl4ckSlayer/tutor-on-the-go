@@ -3,22 +3,25 @@ import "./Teaching.css";
 
 const Teaching = () => {
   return (
-    <div>
-      <h1>How I teach</h1>
-      <div className="d-lg-flex align-items-center justify-content-center ">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe
-            className="iframe"
-            src="https://www.youtube.com/embed/f_uwKZIAeM0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div className="ps-4">
-          <h3>Learn with Animation</h3>
-          <p></p>
+    <div className="mt-4 text-center align-items-center justify-content-center ">
+      <h1 className="mt-4 mb-4 text-center">How I teach</h1>
+      <div className="d-lg-flex align-items-center justify-content-center  ">
+        <iframe
+          className="iframe m-4  "
+          src="https://www.youtube.com/embed/f_uwKZIAeM0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <div className="ps-2 order-md-1 text-center w-50 teach">
+          <h2>Learn With Animation</h2>
+          <h5 className="text-warning">
+            Teaching is an art. So i try to achive that art. I like to teach my
+            student with proper knowledge and try to help them to achive their
+            goal
+          </h5>
         </div>
       </div>
     </div>

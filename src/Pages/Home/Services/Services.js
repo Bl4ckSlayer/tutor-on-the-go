@@ -1,7 +1,13 @@
+import { useEffect, useState } from "react";
 import Service from "../Service/Service";
 
-const Services = (props) => {
-  const { services } = props;
+const Services = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("service.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
 
   return (
     <div id="services" className="container">

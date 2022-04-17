@@ -3,13 +3,22 @@ import { Button } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import auth from "../../../firebase.init";
-import AllFunctions from "../../AllFunction";
-import Checkout from "../../Checkout/Checkout";
+import AllFunctions from "../../../Hooks/AllFunctions";
 
 const Service = (props) => {
   const { service } = props;
   const { name, img, description, price } = service;
   const navigate = useNavigate();
+  const [
+    cart,
+    setCart,
+    addToCart,
+    addToPackage,
+    DeleteItem,
+    emptyCart,
+    emptyPackage,
+  ] = AllFunctions();
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const { id } = useParams({});
@@ -22,9 +31,7 @@ const Service = (props) => {
   }, [id]);
 
   const navigateToServiceDetail = (service) => {
-    // <Link to="/checkout">
-    //   <Checkout key={service.id} service={service}></Checkout>
-    // </Link>;
+    addToCart(service);
     navigate("/checkout");
   };
   return (
@@ -38,7 +45,7 @@ const Service = (props) => {
 
           <Button
             className="btn btn-primary "
-            onClick={() => navigateToServiceDetail()}
+            onClick={() => navigateToServiceDetail(service)}
           >
             Get It
           </Button>
