@@ -1,53 +1,7 @@
 import Service from "../Service/Service";
-import service1 from "../../../Images/service/service1.jpg";
-import service2 from "../../../Images/service/service2.jpg";
-import service3 from "../../../Images/service/service3.jpg";
-import service4 from "../../../Images/service/service4.jpg";
-import service5 from "../../../Images/service/service5.jpg";
 
-const Services = () => {
-  const services = [
-    {
-      id: 1,
-      name: "UI/UX",
-      price: "400",
-      description:
-        "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-      img: service1,
-    },
-    {
-      id: 2,
-      name: "MACHINE LEARNING",
-      price: "200",
-      description:
-        "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-      img: service2,
-    },
-    {
-      id: 3,
-      name: "DATA SCIENCE",
-      price: "100",
-      description:
-        "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-      img: service3,
-    },
-    {
-      id: 4,
-      name: "ARTIFICIAL INTELLIGENCE",
-      price: "200",
-      description:
-        "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-      img: service4,
-    },
-    {
-      id: 5,
-      name: "ROBOTICS",
-      price: "500",
-      description:
-        "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-      img: service5,
-    },
-  ];
+const Services = (props) => {
+  const { services } = props;
 
   return (
     <div id="services" className="container">

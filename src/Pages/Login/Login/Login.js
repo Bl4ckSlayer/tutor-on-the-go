@@ -9,6 +9,7 @@ import {
 import { toast, ToastContainer } from "react-toastify";
 import Loading from "../../Shared/Loading/Loading";
 import "react-toastify/dist/ReactToastify.css";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -32,7 +33,7 @@ const Login = () => {
   }
 
   if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+    errorElement = <p className="text-danger"> {error?.message}</p>;
   }
 
   const handleSubmit = (event) => {
@@ -47,9 +48,13 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email");
+      toast.success("Email Sent", {
+        theme: "colored",
+      });
     } else {
-      toast("please enter your email address");
+      toast.error("please enter your email address", {
+        theme: "colored",
+      });
     }
   };
   return (
@@ -97,6 +102,7 @@ const Login = () => {
       </p>
 
       <ToastContainer />
+      <SocialLogin></SocialLogin>
     </div>
   );
 };

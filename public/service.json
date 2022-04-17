@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "UI/UX",
+    "price": "400",
+
+    "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+    "img": "https://i.ibb.co/Mg107VQ/service1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "MACHINE LEARNING",
+    "price": "200",
+    "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+    "img": "https://i.ibb.co/yfhdCW0/service2.jpg "
+  },
+  {
+    "id": 3,
+    "name": "DATA SCIENCE",
+    "price": "100",
+    "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+    "img": "https://i.ibb.co/SrZgJqq/service3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "ARTIFICIAL INTELLIGENCE",
+    "price": "200",
+    "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+    "img": "https://i.ibb.co/kgJs2mJ/service4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "ROBOTICS",
+    "price": "500",
+    "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+    "img": "https://i.ibb.co/zX2gHnW/service5.jpg"
+  }
+]

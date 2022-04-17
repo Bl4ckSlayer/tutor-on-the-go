@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Pages/About/About";
@@ -11,12 +12,18 @@ import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import Header from "./Pages/Shared/Header/Header";
 
 function App() {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("service.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
   return (
     <div>
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home services={services}></Home>}></Route>
+        <Route path="/home" element={<Home services={services}></Home>}></Route>
         <Route
           path="/checkout"
           element={

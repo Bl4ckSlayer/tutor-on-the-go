@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
   useCreateUserWithEmailAndPassword,
@@ -7,11 +7,13 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import { toast, ToastContainer } from "react-toastify";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Signup = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
-
+  const [agree, setAgree] = useState(false);
   const [createUserWithEmailAndPassword, user, loading, error1] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
@@ -25,6 +27,7 @@ const Signup = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const name = event.target.name.value;
+    console.log(name);
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     console.log("Updated profile");
@@ -32,7 +35,7 @@ const Signup = () => {
   };
   return (
     <div className="container w-50 mx-auto">
-      <h2 className="text-primary text-center mt-2">Please Login</h2>
+      <h2 className="text-primary text-center mt-2">Sign Up</h2>
       <Form onSubmit={handleSignup}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <input
@@ -41,6 +44,7 @@ const Signup = () => {
             placeholder="Username"
             name="name"
             aria-describedby="basic-addon1"
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -59,19 +63,37 @@ const Signup = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary w-50 mx-auto d-block mb-2" type="submit">
-          Login
+        <input
+          onClick={() => setAgree(!agree)}
+          type="checkbox"
+          name="terms"
+          id="terms"
+          className="me-2"
+        />
+        <label
+          className={` ${agree ? "text-primary" : "text-danger"}`}
+          htmlFor="terms"
+        >
+          Accept Our Terms and Conditions
+        </label>
+        <Button
+          disabled={!agree}
+          variant="primary w-50 mx-auto d-block mb-2"
+          type="submit"
+        >
+          Sign Up
         </Button>
       </Form>
-      {/* {errorElement} */}
-      <p>
-        Already Signed Up
+
+      <p className="text-center">
+        <span className="pe-2">Already Signed Up...</span>
         <Link to="/login" className="text-primary pe-auto text-decoration-none">
-          Please Login
+          Please Login!!
         </Link>
       </p>
 
-      {/* <ToastContainer /> */}
+      <ToastContainer />
+      <SocialLogin></SocialLogin>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 
-const Checkout = () => {
+const Checkout = (props) => {
+  console.log(props.service);
   return (
     <div>
       <form>
