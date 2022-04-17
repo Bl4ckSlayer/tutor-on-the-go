@@ -9,8 +9,8 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      name: "ENGINE DIAGNOSTIC",
-      price: "300",
+      name: "UI/UX",
+      price: "400",
       description:
         "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       img: service1,
@@ -18,7 +18,7 @@ const Services = () => {
     {
       id: 2,
       name: "MACHINE LEARNING",
-      price: "100",
+      price: "200",
       description:
         "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       img: service2,
@@ -26,7 +26,7 @@ const Services = () => {
     {
       id: 3,
       name: "DATA SCIENCE",
-      price: "150",
+      price: "100",
       description:
         "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       img: service3,
@@ -34,7 +34,7 @@ const Services = () => {
     {
       id: 4,
       name: "ARTIFICIAL INTELLIGENCE",
-      price: "180",
+      price: "200",
       description:
         "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       img: service4,
@@ -42,7 +42,7 @@ const Services = () => {
     {
       id: 5,
       name: "ROBOTICS",
-      price: "100",
+      price: "500",
       description:
         "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
       img: service5,
