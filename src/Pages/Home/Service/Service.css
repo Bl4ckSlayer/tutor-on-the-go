@@ -2,9 +2,24 @@
   background-color: aliceblue;
   color: black;
 }
-.img-hov:hover {
-  transform: rotate(15deg);
+.img-hov {
+  overflow: hidden;
+  border-radius: 10px;
 }
-.div-hov:hover {
-  transition: width 2s, height 2s, transform 2s;
+.img-hov > img {
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.img-hov > img:hover {
+  transform: scale(1.05);
+}
+
+.card p {
+  transition: 0.4s;
+}
+
+.card p:hover {
+  background-color: rgba(0, 0, 0, 0.137);
+  padding: 10px;
+  border-radius: 15px;
 }

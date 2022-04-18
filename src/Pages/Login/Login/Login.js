@@ -46,7 +46,7 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email !== "") {
       await sendPasswordResetEmail(email);
-      toast("Email Sent");
+      toast.success("Reset Email Sent");
     } else {
       toast.error("please enter your email address", {
         theme: "colored",
@@ -57,7 +57,7 @@ const Login = () => {
     errorElement = <p className="text-danger"> {error?.message}</p>;
   }
   return (
-    <div className="container w-50 mx-auto  p-4 logform rounded-3 my-auto">
+    <div className=" container w-50 mx-auto  p-4 logform rounded-3 my-auto mt-4">
       <h2 className="text-primary fw-bolder  text-center mt-2">Please Login</h2>
 
       <Form onSubmit={handleSubmit}>
@@ -77,7 +77,10 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary w-50 mx-auto d-block mb-2" type="submit">
+        <Button
+          variant="btn btn-dark w-50 d-block mx-auto btn-hover fw-bolder"
+          type="submit"
+        >
           Login
         </Button>
       </Form>

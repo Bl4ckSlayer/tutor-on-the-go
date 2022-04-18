@@ -38,7 +38,10 @@ const Service = (props) => {
   return (
     <div className="g-5 col-sm-12 col-md-6 col-lg-4 div-hov">
       <div className="card" style={{ width: "18rem" }}>
-        <img src={img} className="card-img-top img-hov " alt="..." />
+        <div className="img-hov">
+          <img src={img} className="card-img-top " alt="..." />
+        </div>
+
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>

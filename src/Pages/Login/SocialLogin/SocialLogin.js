@@ -35,7 +35,7 @@ const SocialLogin = () => {
   }
 
   if (user || user1) {
-    navigate("/home");
+    // navigate("/home");
     navigate(from, { replace: true });
   }
   // if (error || error1) {
@@ -47,15 +47,15 @@ const SocialLogin = () => {
   return (
     <div>
       <div className="d-flex align-items-center">
-        <div style={{ height: "1px" }} className="bg-primary w-50"></div>
+        <div style={{ height: "2px" }} className="bg-dark w-50"></div>
         <p className="mt-2 px-2">or</p>
-        <div style={{ height: "1px" }} className="bg-primary w-50"></div>
+        <div style={{ height: "2px" }} className="bg-dark w-50"></div>
       </div>
       {errorMsg}
       <div className="">
         <button
           onClick={() => signInWithGoogle()}
-          className="btn btn-info w-50 d-block mx-auto my-2"
+          className="btn btn-dark w-50 d-block mx-auto btn-hover fw-bolder  my-2"
         >
           <img style={{ width: "30px" }} src={google} alt="" />
           <span className="px-2">Google Sign In</span>
@@ -63,10 +63,15 @@ const SocialLogin = () => {
 
         <button
           onClick={() => signInWithGithub()}
-          className="btn btn-info w-50 d-block mx-auto"
+          className="btn btn-dark w-50 d-block mx-auto btn-hover fw-bolder"
         >
-          <img style={{ width: "30px" }} src={github} alt="" />
-          <span className="px-2">Github Sign In</span>
+          <img
+            className="bg-white rounded-3"
+            style={{ width: "30px" }}
+            src={github}
+            alt=""
+          />
+          <span className="px-2 ">Github Sign In</span>
         </button>
       </div>
     </div>

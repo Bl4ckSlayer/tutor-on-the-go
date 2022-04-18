@@ -3,7 +3,7 @@ import pic from "../../Images/119612-.jpg";
 
 const About = () => {
   return (
-    <div>
+    <div className="container">
       <div className="d-lg-flex  m-4 p-4 align-content-center align-items-center">
         <div className="w-50 p-4">
           <h1 className="text-warning ">
@@ -20,7 +20,7 @@ const About = () => {
             will learn many more languages and cope up with this modern world.{" "}
           </h6>
         </div>
-        <img src={pic} className="img-fluid" alt="" />
+        <img src={pic} className="img-fluid rounded-3 " alt="" />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -31,9 +31,11 @@ const Signup = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user]);
   if (loading || updating) {
     return <Loading></Loading>;
   }
@@ -49,15 +51,14 @@ const Signup = () => {
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-
-    console.log(user);
+    setAgree(false);
   };
   if (error) {
     errorMsg = <p>{error?.message}</p>;
   }
 
   return (
-    <div className="container w-50 mx-auto logform p-4 rounded-3">
+    <div className="container w-50 mx-auto logform p-4 rounded-3 mt-4">
       <h2 className="text-primary text-center mt-2">Sign Up</h2>
 
       <Form onSubmit={handleSignup}>
@@ -65,7 +66,7 @@ const Signup = () => {
           <Form.Control
             type="text"
             ref={nameRef}
-            placeholder="Your name"
+            placeholder="Your Name"
             style={{ border: "1px", color: "#FFCA2C" }}
             required
           />
@@ -75,7 +76,7 @@ const Signup = () => {
           <Form.Control
             ref={emailRef}
             type="email"
-            placeholder="Enter asd email"
+            placeholder="Enter Your Email"
             style={{ border: "1px", color: "#FFCA2C" }}
             required
           />
@@ -103,8 +104,9 @@ const Signup = () => {
           Accept Our Terms and Conditions
         </label>
         <Button
+          className="btn btn-dark w-50 d-block mx-auto btn-hover fw-bolder my-3"
           disabled={!agree}
-          variant="primary w-50 mx-auto d-block mb-2"
+          variant=""
           type="submit"
         >
           Sign Up

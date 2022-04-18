@@ -15,19 +15,20 @@
 1. react
 2. react router
 3. bootstrap
-4. react bootstrap
-5. firebase
-6. react firebase hook
+4. Firebase
+5. React-bootstrap
+6. React-Firebase-hooks
+7. React-Toastify
+8. React-Router-Dom
 
 ## Features and Functionality
 
-- Fast and optimal website
-- online exam and study
-- online tutor
-- get your desired course from my service page
-- some question and answer
-- login and signup feature with email google github
-- and last something about myself
+- Responsive Homepage.
+- Used Private Routes to restrict user from accessing data without Login.
+- Used Firebase Authentication for Google and Github.
+- Used Firebase-Hooks to get authentication easier.
+- Posted some helpfull blogs.
+- Have My goals and plans for future
 
 # `What I offer`
 

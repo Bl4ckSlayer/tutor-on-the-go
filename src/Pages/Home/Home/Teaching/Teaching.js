@@ -3,7 +3,7 @@ import "./Teaching.css";
 
 const Teaching = () => {
   return (
-    <div className="mt-4 text-center align-items-center justify-content-center ">
+    <div className="mt-4 text-center align-items-center justify-content-center container ">
       <h1 className="mt-4 mb-4 text-center ">
         <span className="bg-warning p-1 rounded-3 "> How I teach</span>
       </h1>
@@ -17,7 +17,7 @@ const Teaching = () => {
 
         <div className="ps-2 order-md-1 text-center w-50 teach">
           <h2>Learn With Animation</h2>
-          <h5 className="text-warning">
+          <h5 className="text-warning tech-des">
             Teaching is an art. So i try to achive that art. I like to teach my
             student with proper knowledge and try to help them to achive their
             goal.I cannot teach anybody anything; I can only make them think.
