@@ -35,8 +35,8 @@ const Banner = () => {
         <img className="d-block w-100" src={banner3} alt="Third slide" />
 
         <Carousel.Caption>
-          <h2 className="fw-bolder text-danger">Study Hard</h2>
-          <p className="fw-bolder text-dark  fs-4">
+          <h2 className="fw-bolder text-primary">Study Hard</h2>
+          <p className="fw-bolder text-white fs-4">
             Work hard try hard success will be yours
           </p>
         </Carousel.Caption>

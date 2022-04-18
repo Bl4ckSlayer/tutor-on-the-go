@@ -4,7 +4,9 @@ import "./Teaching.css";
 const Teaching = () => {
   return (
     <div className="mt-4 text-center align-items-center justify-content-center ">
-      <h1 className="mt-4 mb-4 text-center">How I teach</h1>
+      <h1 className="mt-4 mb-4 text-center ">
+        <span className="bg-warning p-1 rounded-3 "> How I teach</span>
+      </h1>
       <div className="d-lg-flex align-items-center justify-content-center  ">
         <iframe
           className="iframe1 m-4  "

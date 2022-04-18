@@ -9,8 +9,10 @@ const Blogs = () => {
           src="https://res.cloudinary.com/practicaldev/image/fetch/s--VYXihGsl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/ras8no1uj4ih1ogzy89h.png"
           alt=""
         />
-        <div className="text-danger ms-4 w-50">
-          <h1>Difference between authorization and authentication</h1>
+        <div className="text-white ms-4 w-50">
+          <h1 className="text-warning">
+            Difference between authorization and authentication
+          </h1>
           <article>
             <span className="fw-bolder">Authentication</span> is the process of
             determining the user’s identity via the available credentials, thus
@@ -46,7 +48,7 @@ const Blogs = () => {
 
       <div className="d-lg-flex m-4 justify-content-between p-4 ">
         <div className=" ms-4 me-4">
-          <h1 className="text-center text-danger">
+          <h1 className="text-center text-warning">
             Why are you using firebase? What other options do you have to
             implement authentication?
           </h1>
@@ -82,7 +84,7 @@ const Blogs = () => {
           src="https://www.tristatetechnology.com/tristate-website/blog/wp-content/uploads/2019/06/firebase11.jpg"
           alt=""
         />
-        <div className="text-danger ms-4">
+        <div className="text-warning ms-4">
           <h1>
             What other services does firebase provide other than authentication?
           </h1>

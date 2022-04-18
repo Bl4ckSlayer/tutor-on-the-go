@@ -21,6 +21,7 @@ const Header = () => {
     emptyCart();
     signOut(auth);
   };
+  console.log(user);
   return (
     <div>
       <>
@@ -41,7 +42,7 @@ const Header = () => {
                 <Nav.Link
                   className="fw-bolder text-white fs-5"
                   as={Link}
-                  to="home#services"
+                  to="/services"
                 >
                   Services
                 </Nav.Link>
@@ -61,6 +62,14 @@ const Header = () => {
                 </Nav.Link>
               </Nav>
               <Nav>
+                {user ? (
+                  <h2 className="fw-bolder text-white mt-2 mx-2 fs-5 ">
+                    {user.displayName}
+                  </h2>
+                ) : (
+                  ""
+                )}
+
                 {user ? (
                   <Button
                     className="fw-bolder text-white fs-5 btn-warning"

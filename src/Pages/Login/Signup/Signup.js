@@ -1,58 +1,82 @@
 import React, { useRef, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import Loading from "../../Shared/Loading/Loading";
-import { toast, ToastContainer } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { Button, Form } from "react-bootstrap";
+import Loading from "../../Shared/Loading/Loading";
 
 const Signup = () => {
+  let errorMsg;
+  const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
+  const confirmPasswordRef = useRef("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [agree, setAgree] = useState(false);
+
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
+  const [email, setEmail] = useState("");
 
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  const handleSignup = async (event) => {
-    event.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    const name = event.target.name.value;
-    console.log(name);
-    await createUserWithEmailAndPassword(email, password);
-    await updateProfile({ displayName: name });
-
-    navigate("/home");
-  };
+  if (user) {
+    navigate(from, { replace: true });
+  }
   if (loading || updating) {
     return <Loading></Loading>;
   }
+  const handleSignup = async (event) => {
+    event.preventDefault();
+
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const confirmPassword = confirmPasswordRef.current.value;
+    setErrorMessage("");
+    console.log(name, email, password, confirmPassword);
+
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+
+    console.log(user);
+  };
+  if (error) {
+    errorMsg = <p>{error?.message}</p>;
+  }
+
   return (
     <div className="container w-50 mx-auto logform p-4 rounded-3">
       <h2 className="text-primary text-center mt-2">Sign Up</h2>
+
       <Form onSubmit={handleSignup}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <input
+        <Form.Group className="mb-3" controlId="formGroupName">
+          <Form.Control
             type="text"
-            className="form-control"
-            placeholder="Username"
-            name="name"
-            aria-describedby="basic-addon1"
+            ref={nameRef}
+            placeholder="Your name"
+            style={{ border: "1px", color: "#FFCA2C" }}
             required
           />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             ref={emailRef}
             type="email"
-            placeholder="Enter email"
+            placeholder="Enter asd email"
+            style={{ border: "1px", color: "#FFCA2C" }}
             required
           />
         </Form.Group>
@@ -61,6 +85,7 @@ const Signup = () => {
             ref={passwordRef}
             type="password"
             placeholder="Password"
+            style={{ border: "1px", color: "#FFCA2C" }}
             required
           />
         </Form.Group>
@@ -85,6 +110,7 @@ const Signup = () => {
           Sign Up
         </Button>
       </Form>
+      <h6 className="text-danger"> {errorMsg}</h6>
 
       <p className="text-center">
         <span className="pe-2">Already Signed Up...</span>
@@ -92,7 +118,6 @@ const Signup = () => {
           Please Login!!
         </Link>
       </p>
-
       <ToastContainer />
       <SocialLogin></SocialLogin>
     </div>

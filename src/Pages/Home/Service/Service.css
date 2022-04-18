@@ -1,0 +1,10 @@
+.btn-hover:hover {
+  background-color: aliceblue;
+  color: black;
+}
+.img-hov:hover {
+  transform: rotate(15deg);
+}
+.div-hov:hover {
+  transition: width 2s, height 2s, transform 2s;
+}

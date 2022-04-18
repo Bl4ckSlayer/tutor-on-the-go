@@ -4,6 +4,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import auth from "../../../firebase.init";
 import AllFunctions from "../../../Hooks/AllFunctions";
+import "./Service.css";
 
 const Service = (props) => {
   const { service } = props;
@@ -35,16 +36,16 @@ const Service = (props) => {
     navigate("/checkout");
   };
   return (
-    <div className="g-5 col-sm-12 col-md-6 col-lg-4">
+    <div className="g-5 col-sm-12 col-md-6 col-lg-4 div-hov">
       <div className="card" style={{ width: "18rem" }}>
-        <img src={img} className="card-img-top " alt="..." />
+        <img src={img} className="card-img-top img-hov " alt="..." />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
           <h5 className="card-title">Price: ${price}</h5>
 
           <Button
-            className="btn btn-primary "
+            className="btn btn-dark fs-5 fw-bold  w-100 btn-hover"
             onClick={() => navigateToServiceDetail(service)}
           >
             Get It

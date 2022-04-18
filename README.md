@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Tutor On The Go
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### live Website:
+
+# [Tesla Model 3 ](https://amirul-tesla-assignment-9.netlify.app/)
+
+### Live Code:
+
+# [CodeLink](https://github.com/programming-hero-web-course-4/product-analysis-website-Bl4ckSlayer)
+
+# `Project Description`
+
+1. Its about tesla model 3.
+2. The feature and some description of this model are on the projects.
+3. There are reviews of people saying various thing on it.
+4. Sell revenue and investment details are shown in graph in dashboard.
+5. Last but no least on about section a complete description of the company.
+
+# `Product Description`
+
+- In this modern world Electric Car are very popular and tesla model 3 is one of them.
+
+* Tesla model 3 renowned for it's features and cheap consume of electricity.
+* Tesla All-Wheel Drive has two independent motors for improved redundancy
+* Autopilot's advanced safety and convenience features are designed to assist you with the most burdensome parts of driving.
+* The inside of Model 3 is unlike any other car. You can use your smartphone as a key, and access all driver controls in the central 15-inch touchscreen.
 
 ## Available Scripts
 
