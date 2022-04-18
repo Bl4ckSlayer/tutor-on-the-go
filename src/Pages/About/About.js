@@ -15,6 +15,10 @@ const About = () => {
             and try my best.My future goal is to learn python.and do a job inm a
             respected company.
           </h5>
+          <h6>
+            To achive my finest goal i will try to be more sincere on my task. I
+            will learn many more languages and cope up with this modern world.{" "}
+          </h6>
         </div>
         <img src={pic} className="img-fluid" alt="" />
       </div>

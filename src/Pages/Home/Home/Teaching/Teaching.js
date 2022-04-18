@@ -20,7 +20,7 @@ const Teaching = () => {
           <h5 className="text-warning">
             Teaching is an art. So i try to achive that art. I like to teach my
             student with proper knowledge and try to help them to achive their
-            goal
+            goal.I cannot teach anybody anything; I can only make them think.
           </h5>
         </div>
       </div>

@@ -6,9 +6,10 @@ const Footer = () => {
 
   return (
     <footer className="text-center footer mt-5 bg-dark  text-white align-items-center">
-      <h3 className="pt-4">
-        <small>copyright &copy; {year} </small>
-      </h3>
+      <h4 className="pt-4">
+        <small>&copy; {year} </small> tutor-one-the-go.web.app / The Tutor
+        Review. Not Affiliated with Anyone
+      </h4>
       All reserved by tutor on the go
     </footer>
   );
