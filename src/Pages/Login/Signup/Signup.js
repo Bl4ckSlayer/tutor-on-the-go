@@ -14,13 +14,16 @@ const Signup = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const [agree, setAgree] = useState(false);
-  const [createUserWithEmailAndPassword, user, loading, error1] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
   if (loading || updating) {
     return <Loading></Loading>;
+  }
+  if (error) {
+    toast.success("hi");
   }
   const handleSignup = async (event) => {
     event.preventDefault();
@@ -34,7 +37,7 @@ const Signup = () => {
     navigate("/home");
   };
   return (
-    <div className="container w-50 mx-auto">
+    <div className="container w-50 mx-auto logform m-4 rounded-3">
       <h2 className="text-primary text-center mt-2">Sign Up</h2>
       <Form onSubmit={handleSignup}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

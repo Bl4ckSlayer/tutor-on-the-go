@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
 import Checkout from "./Pages/Checkout/Checkout";
+import Confirmed from "./Pages/Confirmed/Confirmed";
 import ErrorRoute from "./Pages/ErrorRoute/ErrorRoute";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
+        <Route path="/confirmed" element={<Confirmed></Confirmed>}></Route>
         <Route path="/*" element={<ErrorRoute></ErrorRoute>}></Route>
       </Routes>
 
