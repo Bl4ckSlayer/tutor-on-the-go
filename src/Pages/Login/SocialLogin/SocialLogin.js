@@ -9,11 +9,10 @@ import {
 import auth from "../../../firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
-import { toast, ToastContainer } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const SocialLogin = () => {
-
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
@@ -27,18 +26,23 @@ const SocialLogin = () => {
     return <Loading></Loading>;
   }
 
-  // if (error || error1) {
-  //   errorMsg = (
-  //     <p className="text-danger">
-  //       toast.error({error?.message} {error1?.message})
-  //     </p>
-  //   );
-  // }
+  if (error || error1) {
+    errorMsg = (
+      <p className="text-danger">
+        ({error?.message} {error1?.message})
+      </p>
+    );
+  }
 
   if (user || user1) {
     navigate("/home");
     navigate(from, { replace: true });
   }
+  // if (error || error1) {
+
+  //       toast(`${error?.message} ${error1?.message}`)
+
+  // }
 
   return (
     <div>

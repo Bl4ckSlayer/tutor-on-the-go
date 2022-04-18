@@ -7,12 +7,10 @@ const Teaching = () => {
       <h1 className="mt-4 mb-4 text-center">How I teach</h1>
       <div className="d-lg-flex align-items-center justify-content-center  ">
         <iframe
-          className="iframe m-4  "
+          className="iframe1 m-4  "
           src="https://www.youtube.com/embed/f_uwKZIAeM0"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
         ></iframe>
 
         <div className="ps-2 order-md-1 text-center w-50 teach">

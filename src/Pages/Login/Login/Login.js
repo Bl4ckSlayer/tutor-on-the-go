@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -24,17 +24,14 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user]);
 
   if (loading || sending) {
     return <Loading></Loading>;
-  }
-
-  if (user) {
-    navigate(from, { replace: true });
-  }
-
-  if (error) {
-    errorElement = <p className="text-danger"> {error?.message}</p>;
   }
 
   const handleSubmit = (event) => {
@@ -47,20 +44,22 @@ const Login = () => {
 
   const resetPassword = async () => {
     const email = emailRef.current.value;
-    if (email) {
+    if (email !== "") {
       await sendPasswordResetEmail(email);
-      toast.success("Email Sent", {
-        theme: "colored",
-      });
+      toast("Email Sent");
     } else {
       toast.error("please enter your email address", {
         theme: "colored",
       });
     }
   };
+  if (error) {
+    errorElement = <p className="text-danger"> {error?.message}</p>;
+  }
   return (
-    <div className="container w-50 mx-auto logform m-5  rounded-3">
+    <div className="container w-50 mx-auto  p-4 logform rounded-3 my-auto">
       <h2 className="text-primary fw-bolder  text-center mt-2">Please Login</h2>
+
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
@@ -84,10 +83,10 @@ const Login = () => {
       </Form>
       {errorElement}
       <p>
-        New to Genius Car?
+        New to Tutor On The Go?
         <Link
           to="/signup"
-          className="text-primary pe-auto text-decoration-none"
+          className="btn btn-link text-primary pe-auto text-decoration-none"
         >
           Please Register
         </Link>

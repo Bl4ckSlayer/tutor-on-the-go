@@ -19,12 +19,7 @@ const Signup = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
-  if (loading || updating) {
-    return <Loading></Loading>;
-  }
-  if (error) {
-    toast.success("hi");
-  }
+
   const handleSignup = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
@@ -33,11 +28,14 @@ const Signup = () => {
     console.log(name);
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    console.log("Updated profile");
+
     navigate("/home");
   };
+  if (loading || updating) {
+    return <Loading></Loading>;
+  }
   return (
-    <div className="container w-50 mx-auto logform m-4 rounded-3">
+    <div className="container w-50 mx-auto logform p-4 rounded-3">
       <h2 className="text-primary text-center mt-2">Sign Up</h2>
       <Form onSubmit={handleSignup}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
